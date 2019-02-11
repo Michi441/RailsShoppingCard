@@ -21,6 +21,16 @@
     <%= form.text_field :price %>
   </div>
 
+
+  <% Color.all.each do |color| %>
+    <%= form.fields_for :assignments do |f| %>
+      <%= f.number_field :quantity, :value => "1"%>
+      <%= f.collection_select(:color_id, Color.all, :id, :color) %>
+
+    <% end %>
+
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
