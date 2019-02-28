@@ -24,7 +24,7 @@
 
   <% Color.all.each do |color| %>
     <%= form.fields_for :assignments do |f| %>
-      <%= f.number_field :quantity, :value => "1"%>
+      <%= f.number_field :quantity %>
       <%= f.collection_select(:color_id, Color.all, :id, :color) %>
 
     <% end %>
